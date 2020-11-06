@@ -9,8 +9,6 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    var newItem: Item?
-    
     @IBOutlet var datePicker: UIDatePicker!
     @IBOutlet var textField: UITextField!
     
@@ -20,13 +18,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         saveButton.isEnabled = false
-        
+        // Observer for textfield, when it is empty or not
         textField.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)
-    }
-    
-    func saveItem() {
-        
-        newItem = Item(item: textField.text!, date: datePicker.date)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -34,9 +27,7 @@ class ViewController: UIViewController {
             let vc = segue.destination as! NewItemViewController
             vc.label1 = textField.text
             vc.label2 = datePicker.date
-        } else {
-            return
-        }
+        } 
     }
 }
 
