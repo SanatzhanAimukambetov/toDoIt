@@ -9,8 +9,8 @@ import UIKit
 
 class NewItemViewController: UIViewController {
     
-    var label1: String? = ""
-    var label2: Date = Date()
+    var toDoLabel: String? = ""
+    var deadlineLabel: Date = Date()
     
     @IBOutlet var toDoItem: UILabel!
     @IBOutlet var daysLeftLabel: UILabel!
@@ -18,8 +18,8 @@ class NewItemViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        toDoItem.text = label1
-        daysLeftLabel.text = label2.daysFromNowToString()
+        toDoItem.text = toDoLabel
+        daysLeftLabel.text = deadlineLabel.daysFromNowToString()
     }
 }
 

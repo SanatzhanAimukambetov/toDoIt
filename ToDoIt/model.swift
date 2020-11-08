@@ -8,7 +8,7 @@
 import UIKit
 
 struct Item {
-    
+    // Replace this model with new model (Realm)
     var item: String
     var date: Date
 }

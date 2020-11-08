@@ -4,6 +4,8 @@
 //
 //  Created by Kairat Zukhra on 05.11.2020.
 //
+// ------------------------------
+
 
 import UIKit
 
@@ -11,7 +13,6 @@ class ViewController: UIViewController {
     
     @IBOutlet var datePicker: UIDatePicker!
     @IBOutlet var textField: UITextField!
-    
     @IBOutlet var saveButton: UIButton!
     
     override func viewDidLoad() {
@@ -25,8 +26,8 @@ class ViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "save" {
             let vc = segue.destination as! NewItemViewController
-            vc.label1 = textField.text
-            vc.label2 = datePicker.date
+            vc.toDoLabel = textField.text
+            vc.deadlineLabel = datePicker.date
         } 
     }
 }
